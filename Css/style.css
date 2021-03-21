@@ -1,0 +1,12 @@
+h1 {
+    color: seagreen;
+    font-size: xx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+a {
+    color: sienna;
+    text-decoration: none;
+    font-weight: bold;
+}
