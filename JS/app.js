@@ -59,13 +59,6 @@ Sales.prototype.cookiesTotal =function(){
 
 };
 
-// Sales.prototype.dayTotal= function(){
-//   let tD=0;
-//   for(let i=0; i<5; i++){
-//     tD= this.perHrConsumeArr[i];+ tD;
-//     totalOfDays.push(tD);
-//   }
-// };
 
 
 function first(){
@@ -105,7 +98,6 @@ Sales.prototype.salesPrint =function(){
     let dataCells=document.createElement('td');
     dataRaw.appendChild(dataCells);
     dataCells.textContent = this.perHrConsumeArr[i];
-    // totalOfDays.push(this.perHrConsumeArr);
 
   }
 
@@ -141,18 +133,14 @@ function last(){
 
 
 
-
-//------------------------
-first();
-
-
-
-
 const seattle = new Sales('Seattle',23,65,6.3);
 const tokyo = new Sales('Tokyo',3,24,1.2);
 const dubai = new Sales('Dubai',11,38,3.7);
 const paris = new Sales('Paris',20,38,2.3);
 const lima = new Sales('Lima',2,16,4.6);
+
+//------------------------
+first();
 
 
 
