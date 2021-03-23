@@ -2,7 +2,22 @@
 
 const dayHours =['6 AM','7 AM','8 AM','9 AM','10 AM','11 AM','12 PM','1 PM','2 PM','3 PM','4 PM','5 PM','6 PM','7 PM'];
 
+const container= document.getElementById('salestable');
 
+const tableEl=document.createElement('table');
+container.appendChild(tableEl);
+
+let totalOfDays =[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+console.log(totalOfDays);
+
+function totalOfTotal(){
+  let tT=0;
+  for(let i=0; i<totalOfDays.length; i++){
+    tT= totalOfDays[i]+tT;
+  }
+  return tT;
+}
 
 
 function Sales(location,min,max,avg){
@@ -27,12 +42,15 @@ Sales.prototype.random = function(){
   {
     let x= random(this.hrMin,this.hrMax);
     this.costumerPerHrArr.push(x);
-    this.perHrConsumeArr.push(Math.ceil(x* this.cookiespercostumerAvg));
+    let y= Math.ceil(x* this.cookiespercostumerAvg);
+    this.perHrConsumeArr.push(y);
+    totalOfDays[i]=totalOfDays[i]+y;
   }
 };
 
-Sales.prototype.cookiesTotal =function(){
 
+
+Sales.prototype.cookiesTotal =function(){
   let total =0;
   for (let i=0; i<this.perHrConsumeArr.length; i++){
     total= this.perHrConsumeArr[i] + total;
@@ -41,14 +59,16 @@ Sales.prototype.cookiesTotal =function(){
 
 };
 
-
+// Sales.prototype.dayTotal= function(){
+//   let tD=0;
+//   for(let i=0; i<5; i++){
+//     tD= this.perHrConsumeArr[i];+ tD;
+//     totalOfDays.push(tD);
+//   }
+// };
 
 
 function first(){
-  const container= document.getElementById('salestable');
-
-  const tableEl=document.createElement('table');
-  container.appendChild(tableEl);
 
   const headerowEL=document.createElement('tr');
   tableEl.appendChild(headerowEL);
@@ -71,10 +91,6 @@ function first(){
 
 
 Sales.prototype.salesPrint =function(){
-  const container= document.getElementById('salestable');
-
-  const tableEl=document.createElement('table');
-  container.appendChild(tableEl);
 
   const dataRaw=document.createElement('tr');
   tableEl.appendChild(dataRaw);
@@ -89,19 +105,19 @@ Sales.prototype.salesPrint =function(){
     let dataCells=document.createElement('td');
     dataRaw.appendChild(dataCells);
     dataCells.textContent = this.perHrConsumeArr[i];
+    // totalOfDays.push(this.perHrConsumeArr);
 
   }
+
   dataCells=document.createElement('td');
   dataRaw.appendChild(dataCells);
   dataCells.textContent = this.cookiesTotal();
 
+
+
 };
 
 function last(){
-  const container= document.getElementById('salestable');
-
-  const tableEl=document.createElement('table');
-  container.appendChild(tableEl);
 
   const headerowEL=document.createElement('tr');
   tableEl.appendChild(headerowEL);
@@ -114,48 +130,52 @@ function last(){
   {
     let headerCells=document.createElement('th');
     headerowEL.appendChild(headerCells);
-    headerCells.textContent = '';
+    headerCells.textContent = totalOfDays[i];
   }
+
   headerCells=document.createElement('th');
   headerowEL.appendChild(headerCells);
-  headerCells.textContent = '';
+  headerCells.textContent = totalOfTotal();
 
 }
 
 
 
+
+//------------------------
 first();
 
 
+
+
 const seattle = new Sales('Seattle',23,65,6.3);
+const tokyo = new Sales('Tokyo',3,24,1.2);
+const dubai = new Sales('Dubai',11,38,3.7);
+const paris = new Sales('Paris',20,38,2.3);
+const lima = new Sales('Lima',2,16,4.6);
+
+
 
 seattle.random();
 seattle.salesPrint();
 
-const tokyo = new Sales('Tokyo',3,24,1.2);
 
 tokyo.random();
 tokyo.salesPrint();
 
 
-const dubai = new Sales('Dubai',11,38,3.7);
-
 dubai.random();
 dubai.salesPrint();
 
-
-
-const paris = new Sales('Paris',20,38,2.3);
 
 paris.random();
 paris.salesPrint();
 
 
-
-const lima = new Sales('Lima',2,16,4.6);
 lima.random();
 lima.salesPrint();
 
+console.log(totalOfDays);
 
 last();
 
