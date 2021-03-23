@@ -46,6 +46,7 @@ Sales.prototype.random = function(){
     this.perHrConsumeArr.push(y);
     totalOfDays[i]=totalOfDays[i]+y;
   }
+
 };
 
 
