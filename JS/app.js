@@ -185,12 +185,12 @@ function addNewStore(event){
   let max= event.target.max.value;
   let avg= event.target.avg.value;
   let newStore= new Sales(storLocation,min,max,avg);
-  
+
   newStore.random();
   newStore.salesPrint();
-  
+
   last();
-  
+
 }
 
 
