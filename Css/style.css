@@ -9,10 +9,24 @@ header {
 }
 
 .top img{
-  width: 60px;
-  height: 30px;
+  width: 100px;
+  height: 70px;
   float: left;
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
 }
+
+a.top img {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
+}
+
 
 h1{
   color: #f8f8f8;
@@ -23,21 +37,10 @@ h1{
   width: 600px;
   height: 50px;
   top: 25px;
-  left: 300px;
+  left: 320px;
 }
 
 
-#page2 {
-  color: #f8f8f8;
-  font-size: xx-large;
-  font-family: cursive;
-  font-weight: bolder;
-  position: relative;
-  width: 600px;
-  height: 50px;
-  top: 25px;
-  left: 300px;
-}
 
 .line {
   text-decoration: none;
@@ -79,8 +82,6 @@ div{
   height: 150px;
   left: 25%;
   right: 25%;
-  /* margin-left: 100px;
-  margin-right: 500px; */
   display: inline-block;
   
 }
