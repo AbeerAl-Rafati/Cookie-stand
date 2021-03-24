@@ -25,6 +25,16 @@ h1 {
 }
 
 
+#page2 {
+  color: #f8f5f1;
+  font-size: x-large;
+  font-family: cursive;
+  font-weight: bolder;
+  font-family: cursive;
+  position: relative;
+  text-shadow: #ddd;
+}
+
 .line {
   text-decoration: none;
   list-style: none;
@@ -44,6 +54,7 @@ ul li {
   color: #e9896a;
   margin: 20px;
 }
+
 div{
     margin-top: 50px;
     padding: 10px;
@@ -51,21 +62,21 @@ div{
     border-color: #387c6d;
 }
 
-.img{
-  margin: 10px;
+#img{
   align-self: center;
   width: 90%;
-  height: 300px;
+  height: 30%;
   margin-left: 50px;
   margin-right: 50px;
-
+  align-content: center;
 }
-.img ul li img{
+#img ul li img{
   width: 200px;
   height: 150px;
-  margin: 100px 0px 100px 0px;
-  position: relative;
+  margin-left: 100px;
+  margin-right: 500px;
   display: inline-block;
+  
 }
 
 #welcome{
