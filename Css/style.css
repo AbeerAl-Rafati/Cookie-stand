@@ -108,14 +108,78 @@ th, td {
 
 th {
     background-color: #387c6d;
-    color: white;
+    color: #343f56;
+    font-weight: bolder;
+    font-family: cursive;
   }
 
-
+td{
+  color: #387c6d;
+  font-family: cursive;
+}
 tr, th, td{
     height: 2em;
     width: 3em;
 }
+
+
+legend{
+  font-weight: bolder;
+  font-family: cursive;
+  font-size: x-large;
+  color: #343f56;
+  text-align: center;
+  text-decoration: underline;
+
+
+}
+
+label{
+font-family: cursive;
+font-size: large;
+color: #387c6d;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #387c6d;
+  color: #f5f5f5;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bolder;
+  font-family: cursive;
+  
+}
+
+input[type=submit]:hover {
+  background-color: #e9896a;
+  color: #343f56;
+}
+
+form {
+  border-radius: 5px;
+  width: 500px;
+  background-color: moccasin;
+  padding: 30px;
+
+}
+
+  
+
 
 .btn{
   text-align: right;
@@ -182,7 +246,7 @@ a.button {
 
 
 footer{
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   background-color: #343f56;

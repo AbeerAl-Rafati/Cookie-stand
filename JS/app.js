@@ -9,7 +9,7 @@ container.appendChild(tableEl);
 
 let totalOfDays =[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-console.log(totalOfDays);
+let places= [];
 
 function totalOfTotal(){
   let tT=0;
@@ -27,6 +27,7 @@ function Sales(location,min,max,avg){
   this.cookiespercostumerAvg = avg;
   this.costumerPerHrArr = [];
   this.perHrConsumeArr= [];
+  places.push(this);
 }
 
 Sales.prototype.random = function(){
@@ -164,10 +165,32 @@ paris.salesPrint();
 lima.random();
 lima.salesPrint();
 
-console.log(totalOfDays);
 
 last();
 
 
+
+
+
+
+let myForm =document.getElementById('newStore');
+
+myForm.addEventListener('submit', addNewStore);
+
+function addNewStore(event){
+  event.preventDefault();
+  tableEl.deleteRow(-1);
+  let storLocation= event.target.location.value;
+  let min= event.target.min.value;
+  let max= event.target.max.value;
+  let avg= event.target.avg.value;
+  let newStore= new Sales(storLocation,min,max,avg);
+  
+  newStore.random();
+  newStore.salesPrint();
+  
+  last();
+  
+}
 
 
